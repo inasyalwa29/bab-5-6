@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+    <!DOCTYPE html>
+    <html>
+    <head>
+         <title>Program Belaja</title>
+    </head>
+    <body> 
+        <div>
+            Barang :
+            <select id="List barang">
+                <option value="Album BTS"selected>Album BTS</option>
+                <option value="Lightstick Ateez"selected>Lightstick Ateez</option>
+                <option value="PC SEVENTEEN"selected>PC SEVENTEEN</option>
+                <option value="keychain TXT" selected>keychain TXT</option>
+            </select>
+            <button id="tambah" onclick="cek_barang()">(+)</button>
+        </div>
+        <div>
+            Jumlah :
+            <input type="text" id="jumlah">
+        </div>
+        <div id="barang"></div>
+        <div id="total"></div>
+    </body>
+    </html>
+
+<script>
+    var harga;
+    var nama_barang;
+    var ket="";
+    var jumlah=0;
+    var total=0;
+    var subtotal=0;
+
+    function cek_barang (){
+        var nama = document.getElementById("list barang").value;
+        switch(nama){
+            case'Album BTS':
+               harga = 300.000;
+               nama_barang = "Album BTS";
+               break;
+            case'LightStick Ateez':
+               harga = 700.000;
+               nama_barang = "LightStick Ateez";
+               break;
+            case'PC SEVENTEEN':
+                harga = 120.000;
+                nama_barang = "PC SEVENTEEN";
+                break;
+            case'keychain TXT':
+                harga = 50.000;
+                nama_barang = "Keychain TXT";
+                break;
+        }
+        jumlah = parseint (document.get.ElementById("jumlah".value));
+        subtotal = jumlah * harga;
+        total = total + subtotal;
+        ket = ket + nama_barang + ":" + harga + ":" + jumlah + "=" + subtotal + "<br>";
+        document.getElementById("barang"),innerHTML = ket;
+        document.getElementById("total").innerHTML = "Total Belanja =" + total;
+        
+    }
+</script> 

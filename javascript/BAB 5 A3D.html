@@ -1,0 +1,38 @@
+<script>
+    var harga;
+    var nama_barang;
+    var ket = "";
+    var jumlahhe;
+    var total=0;
+    var subtotal=0;
+
+    function cek_barang () {
+        var nama = document.getElementById("listbarang").value;
+        switch(nama){
+            case 'Buku':
+                harga = 30000;
+                nama_barang = "Buku";
+                break;
+            case 'Tas':
+                harga = 50000;
+                nama_barang = "Tas";
+                break;
+            case 'Pensil':
+                harga = 5000;
+                nama_barang = "Buku";
+                break;
+            case 'Penghapus':
+                harga = 15000;
+                nama_barang = "Penghapus";
+                break;
+        }
+
+        jumlah = parseInt (document.getElementById("jumlah").value);
+        subtotal = jumlah * harga;
+        total = total + subtotal;
+        ket = ket + nama_barang + ":" + harga + ":" + jumlah + "=" + subtotal + "<br>";
+        document.getElementById("barang").innerHTML = ket;
+        document.getElementById("total").innerHTML = "Total Belanja = " + total;
+
+    }
+</script>
